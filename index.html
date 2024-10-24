@@ -1,3 +1,4 @@
+// index.html
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -5,254 +6,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Data Analytics Portfolio of Akash Bhargav - Exploring data one project at a time" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <style>
-        :root {
-            --primary-color: #2d3436;
-            --secondary-color: #4a90e2;
-            --background-color: #ffffff;
-            --text-color: #2d3436;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --gradient-start: #f8f9fa;
-            --gradient-end: #e9ecef;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* Header Styles */
-        .header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(74, 144, 226, 0.03) 0px,
-                rgba(74, 144, 226, 0.03) 2px,
-                transparent 2px,
-                transparent 10px
-            );
-            z-index: 1;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 3rem 4rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            max-width: 800px;
-            width: 90%;
-        }
-
-        .header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .header p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #4a5568;
-        }
-
-        .header .subtitle {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 1rem;
-            box-shadow: var(--card-shadow);
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            color: var(--secondary-color);
-            background-color: rgba(74, 144, 226, 0.1);
-        }
-
-        .button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: var(--secondary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            border: 2px solid var(--secondary-color);
-        }
-
-        .button:hover {
-            background-color: transparent;
-            color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        /* Rest of the styles remain the same as in the previous version */
-        /* Projects Section */
-        .projects {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 2rem;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-content p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 2rem auto;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                padding: 2rem;
-            }
-            
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .header p {
-                font-size: 1.2rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -261,13 +23,36 @@
             <h1>Akash Bhargav</h1>
             <p class="subtitle">Data Analyst & Visualization Expert</p>
             <p>Exploring data one project at a time</p>
-            <a href="#projects" class="button">View My Work</a>
+            <a href="projects.html" class="button">View My Work</a>
         </div>
     </header>
+</body>
+</html>
 
-    <!-- Rest of the HTML remains the same as in the previous version -->
-    <section id="projects" class="projects">
+// projects.html
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Projects | Akash Bhargav</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Data Analytics Projects by Akash Bhargav" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="projects-page">
+        <h1>My Projects</h1>
         <div class="project-grid">
+            <!-- Original Projects -->
             <article class="project-card">
                 <img src="images/Supply Chain Optimisation.jpg" alt="Supply Chain Project" class="project-image">
                 <div class="project-content">
@@ -294,29 +79,303 @@
                     <a href="https://akashbhargav12.github.io/Superstore-Sales-Analysis/" class="button">View Project</a>
                 </div>
             </article>
-        </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-grid">
-            <div>
-                <h3>Location</h3>
-                <p>United Kingdom</p>
-            </div>
-            <div>
-                <h3>Email</h3>
-                <p>bhargav.akash12@gmail.com</p>
-            </div>
-            <div>
-                <h3>Phone</h3>
-                <p>+44 7435386822</p>
-            </div>
-        </div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/akash-bhargav" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/AkashBhargav12" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <!-- New Projects -->
+            <article class="project-card">
+                <img src="images/customer-analytics.jpg" alt="Customer Analytics" class="project-image">
+                <div class="project-content">
+                    <h3>Customer Segmentation Analysis</h3>
+                    <p>Advanced clustering analysis to identify key customer segments using Python and Scikit-learn</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="images/time-series.jpg" alt="Time Series Analysis" class="project-image">
+                <div class="project-content">
+                    <h3>Time Series Forecasting</h3>
+                    <p>Sales forecasting model using SARIMA and Prophet, achieving 92% accuracy</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="images/dashboard.jpg" alt="Interactive Dashboard" class="project-image">
+                <div class="project-content">
+                    <h3>Interactive Sales Dashboard</h3>
+                    <p>Real-time sales monitoring dashboard built with Power BI and DAX</p>
+                    <a href="#" class="button">View Project</a>
+                </div>
+            </article>
         </div>
     </section>
 </body>
 </html>
+
+// contact.html
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Contact | Akash Bhargav</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Contact Akash Bhargav - Data Analyst" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-page">
+        <div class="contact-content">
+            <h1>Get in Touch</h1>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>United Kingdom</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>bhargav.akash12@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+44 7435386822</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/akash-bhargav" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/AkashBhargav12" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+// styles.css
+:root {
+    --primary-color: #2d3436;
+    --secondary-color: #4a90e2;
+    --background-color: #ffffff;
+    --text-color: #2d3436;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --gradient-start: #f8f9fa;
+    --gradient-end: #e9ecef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem;
+    box-shadow: var(--card-shadow);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav a:hover, nav a.active {
+    color: var(--secondary-color);
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+/* Header Styles */
+.header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    position: relative;
+}
+
+.header-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem 4rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+}
+
+/* Projects Page */
+.projects-page {
+    padding: 6rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-page h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Contact Page */
+.contact-page {
+    padding: 6rem 2rem 2rem;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    min-height: 100vh;
+}
+
+.contact-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid var(--secondary-color);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-content {
+        padding: 2rem;
+    }
+}
