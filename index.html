@@ -1,127 +1,322 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-    <title>Akash Bhargav - Data Portfolio</title>
+    <title>Akash Bhargav | Data Portfolio</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore the data portfolio of Akash Bhargav, featuring projects on data analysis, visualization, and insights." />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Data Analytics Portfolio of Akash Bhargav - Exploring data one project at a time" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --secondary-color: #4a90e2;
+            --background-color: #ffffff;
+            --text-color: #2d3436;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --gradient-start: #f8f9fa;
+            --gradient-end: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(74, 144, 226, 0.03) 0px,
+                rgba(74, 144, 226, 0.03) 2px,
+                transparent 2px,
+                transparent 10px
+            );
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem 4rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: var(--card-shadow);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+            background-color: rgba(74, 144, 226, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .button:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Rest of the styles remain the same as in the previous version */
+        /* Projects Section */
+        .projects {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 2rem;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
-<body class="is-preload">
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Wrapper -->
-    <div id="wrapper" class="fade-in">
-
-        <!-- Navigation -->
-        <header>
-            <nav id="nav">
-                <ul class="links">
-                    <li><a href="#about">About Me</a></li>
-                    <li class="active"><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <ul class="icons">
-                    <li><a href="https://www.linkedin.com/in/akash-bhargav" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/AkashBhargav12" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Intro Section (About Me) -->
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="images/profile.jpg" alt="Akash Bhargav" width="200" height="200">
-            <p>Hi, I'm Akash Bhargav, a data enthusiast specializing in data analysis, visualization, and insights. Welcome to my portfolio.</p>
-        </section>
-
-        <!-- Projects Section -->
-        <div id="main">
-            <section id="projects">
-                <h2>Projects</h2>
-
-                <!-- Project 1 -->
-                <article class="post featured">
-                    <header class="major">
-                        <h3><a href="https://akashbhargav12.github.io/Supply-Chain-Optimisation/">Supply Chain Optimization using SQL and PowerBI</a></h3>
-                        <p>End-to-end supply chain analysis using SQL and Power BI, improving efficiency by 15%.</p>
-                    </header>
-                    <a href="https://akashbhargav12.github.io/Supply-Chain-Optimisation/" class="image main"><img src="images/Supply-Chain-Optimisation.jpg" alt="Supply Chain Optimization Project" /></a>
-                    <ul class="actions special">
-                        <li><a href="https://akashbhargav12.github.io/Supply-Chain-Optimisation/" class="button large">View Project</a></li>
-                    </ul>
-                </article>
-
-                <!-- Project 2 -->
-                <article>
-                    <header>
-                        <h3><a href="https://akashbhargav12.github.io/Top-UK-Youtubers-2024/">Top UK Youtubers - 2024</a></h3>
-                    </header>
-                    <a href="https://akashbhargav12.github.io/Top-UK-Youtubers-2024/" class="image fit"><img src="images/sprout-social-social-youtube-monetization.svg" alt="Top UK Youtubers Project" /></a>
-                    <p>Analyzing the top YouTubers in the UK using Excel, SQL, and PowerBI.</p>
-                    <ul class="actions special">
-                        <li><a href="https://akashbhargav12.github.io/Top-UK-Youtubers-2024/" class="button">View Project</a></li>
-                    </ul>
-                </article>
-
-                <!-- More projects can follow the same structure -->
-
-            </section>
+    <header id="home" class="header">
+        <div class="header-content">
+            <h1>Akash Bhargav</h1>
+            <p class="subtitle">Data Analyst & Visualization Expert</p>
+            <p>Exploring data one project at a time</p>
+            <a href="#projects" class="button">View My Work</a>
         </div>
+    </header>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>If you're interested in collaborating or would like to know more, feel free to reach out!</p>
-            <ul>
-                <li>Email: <a href="mailto:bhargav.akash12@gmail.com">bhargav.akash12@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/akash-bhargav">Connect with me</a></li>
-            </ul>
-        </section>
+    <!-- Rest of the HTML remains the same as in the previous version -->
+    <section id="projects" class="projects">
+        <div class="project-grid">
+            <article class="project-card">
+                <img src="images/Supply Chain Optimisation.jpg" alt="Supply Chain Project" class="project-image">
+                <div class="project-content">
+                    <h3>Supply Chain Optimisation</h3>
+                    <p>End-to-end supply chain analysis using SQL and Power BI, resulting in 15% efficiency improvement</p>
+                    <a href="https://akashbhargav12.github.io/Supply-Chain-Optimisation/" class="button">View Project</a>
+                </div>
+            </article>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <section class="split contact">
-                <section>
-                    <h3>Location</h3>
-                    <p>United Kingdom</p>
-                </section>
-                <section>
-                    <h3>Phone</h3>
-                    <p><a href="tel:+447435386822">+44 7435386822</a></p>
-                </section>
-                <section>
-                    <h3>Email</h3>
-                    <p><a href="mailto:bhargav.akash12@gmail.com">bhargav.akash12@gmail.com</a></p>
-                </section>
-                <section>
-                    <h3>Social</h3>
-                    <ul class="icons alt">
-                        <li><a href="https://www.linkedin.com/in/akash-bhargav" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="https://github.com/AkashBhargav12" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                    </ul>
-                </section>
-            </section>
-        </footer>
+            <article class="project-card">
+                <img src="images/sprout-social-social-youtube-monetization.svg" alt="UK YouTubers Analysis" class="project-image">
+                <div class="project-content">
+                    <h3>Top UK YouTubers 2024</h3>
+                    <p>Comprehensive analysis of top UK YouTubers using Excel, SQL and PowerBI</p>
+                    <a href="https://akashbhargav12.github.io/Top-UK-Youtubers-2024/" class="button">View Project</a>
+                </div>
+            </article>
 
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul>
-                <li>&copy; 2024 Akash Bhargav</li>
-                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-            </ul>
+            <article class="project-card">
+                <img src="images/Banner Image.png" alt="Superstore Analysis" class="project-image">
+                <div class="project-content">
+                    <h3>Superstore Sales Analysis</h3>
+                    <p>Visualization of sales data across USA stores to gain revenue insights</p>
+                    <a href="https://akashbhargav12.github.io/Superstore-Sales-Analysis/" class="button">View Project</a>
+                </div>
+            </article>
         </div>
+    </section>
 
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-grid">
+            <div>
+                <h3>Location</h3>
+                <p>United Kingdom</p>
+            </div>
+            <div>
+                <h3>Email</h3>
+                <p>bhargav.akash12@gmail.com</p>
+            </div>
+            <div>
+                <h3>Phone</h3>
+                <p>+44 7435386822</p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/akash-bhargav" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/AkashBhargav12" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
 </body>
 </html>
